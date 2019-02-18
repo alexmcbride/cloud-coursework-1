@@ -97,6 +97,7 @@
   <ItemGroup>
     <Content Include="Connected Services\AzureStorage1\ConnectedService.json" />
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\am-cloud-coursework1 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
