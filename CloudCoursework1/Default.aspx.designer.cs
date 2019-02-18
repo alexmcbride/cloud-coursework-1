@@ -22,15 +22,6 @@ namespace CloudCoursework1 {
         protected global::System.Web.UI.HtmlControls.HtmlForm uploadForm;
         
         /// <summary>
-        /// sm1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.ScriptManager sm1;
-        
-        /// <summary>
         /// soundFileUpload control.
         /// </summary>
         /// <remarks>
@@ -58,30 +49,30 @@ namespace CloudCoursework1 {
         protected global::System.Web.UI.WebControls.Label messageLabel;
         
         /// <summary>
-        /// up1 control.
+        /// updatePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel up1;
+        protected global::System.Web.UI.UpdatePanel updatePanel;
         
         /// <summary>
-        /// sampleDisplayControl control.
+        /// soundDisplayControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView sampleDisplayControl;
+        protected global::System.Web.UI.WebControls.ListView soundDisplayControl;
         
         /// <summary>
-        /// refreshButton control.
+        /// RefreshButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button refreshButton;
+        protected global::System.Web.UI.WebControls.Button RefreshButton;
     }
 }

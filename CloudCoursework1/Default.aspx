@@ -8,21 +8,18 @@
 </head>
 <body>
     <form id="uploadForm" runat="server">
-        <asp:ScriptManager ID="sm1" runat="server" />
         <div>
             <h1>Upload Sound</h1>
-            <asp:FileUpload ID="soundFileUpload" runat="server"/>
-            <br />
-            <br />
-            <asp:Button ID="uploadButton" runat="server" Text="Upload" OnClick="uploadButton_Click" />
+            <asp:FileUpload ID="soundFileUpload" runat="server" />
+            <asp:Button ID="uploadButton" runat="server" Text="Upload" OnClick="UploadButton_Click" />
             <asp:Label ID="messageLabel" runat="server" Text=""></asp:Label>
         </div>
 
         <div>
             <h2>Uploaded</h2>
-            <asp:UpdatePanel ID="up1" runat="server">
+            <asp:UpdatePanel ID="updatePanel" runat="server">
                 <ContentTemplate>
-                    <asp:ListView ID="sampleDisplayControl" runat="server" ItemPlaceholderID="soundsPlaceholder">
+                    <asp:ListView ID="soundDisplayControl" runat="server" ItemPlaceholderID="soundsPlaceholder">
                         <LayoutTemplate>
                             <asp:PlaceHolder runat="server" ID="soundsPlaceholder"></asp:PlaceHolder>
                         </LayoutTemplate>
@@ -31,11 +28,11 @@
                             <asp:Literal ID="label" Text='<%# Eval("Title") %>' runat="server" /><br />
                         </ItemTemplate>
                     </asp:ListView>
-                    
+
                 </ContentTemplate>
             </asp:UpdatePanel>
 
-            <asp:Button ID="refreshButton" runat="server" Text="Refresh" OnClick="refreshButton_Click" />
+            <asp:Button ID="RefreshButton" runat="server" Text="Refresh" OnClick="RefreshButton_Click" />
         </div>
     </form>
 </body>

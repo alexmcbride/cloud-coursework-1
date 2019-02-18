@@ -25,10 +25,10 @@ namespace CloudCoursework1
         private void InitializeCloud()
         {
             string connectionString = CloudConfigurationManager.GetSetting("StorageConnectionString");
-            CloudStorageAccount cloudStorage = CloudStorageAccount.Parse(connectionString);
-            CloudQueueClient queueClient = cloudStorage.CreateCloudQueueClient();
+            var cloudStorage = CloudStorageAccount.Parse(connectionString);
+            var queueClient = cloudStorage.CreateCloudQueueClient();
 
-            CloudBlobClient blobClient = cloudStorage.CreateCloudBlobClient();
+            var blobClient = cloudStorage.CreateCloudBlobClient();
             blobContainer = blobClient.GetContainerReference("soundblob");
             blobContainer.CreateIfNotExists();
 
@@ -36,39 +36,47 @@ namespace CloudCoursework1
             cloudQueue.CreateIfNotExists();
         }
 
-        protected void uploadButton_Click(object sender, EventArgs e)
+        protected void UploadButton_Click(object sender, EventArgs e)
+        {
+            UploadSoundFile();
+        }
+
+        private void UploadSoundFile()
         {
             if (soundFileUpload.HasFile)
             {
-                AddSoundFileToQueue(soundFileUpload.PostedFile);
+                var file = soundFileUpload.PostedFile;
+                string ext = Path.GetExtension(file.FileName);
+                if (FileExtensions.Any(e => e == ext))
+                {
+                    AddFileToQueue(file);
+                }
+                else
+                {
+                    messageLabel.Text = "Not valid extension";
+                }
             }
         }
 
-        private void AddSoundFileToQueue(HttpPostedFile file)
+        private void AddFileToQueue(HttpPostedFile file)
         {
             string ext = Path.GetExtension(file.FileName);
-            if (FileExtensions.Any(e => e == ext))
-            {
-                string name = Guid.NewGuid().ToString() + ext;
+            string filename = Guid.NewGuid().ToString() + ext;
+            string blobName = "sounds/" + filename;
 
-                CloudBlockBlob blob = blobContainer.GetBlockBlobReference("sounds/" + name);
-                blob.Properties.ContentType = file.ContentType;
-                blob.UploadFromStream(file.InputStream);
+            var blob = blobContainer.GetBlockBlobReference(blobName);
+            blob.Properties.ContentType = file.ContentType;
+            blob.UploadFromStream(file.InputStream);
 
-                blob.Metadata["Title"] = file.FileName;
-                blob.SetMetadata();
+            blob.Metadata["Title"] = file.FileName;
+            blob.SetMetadata();
 
-                byte[] bytes = Encoding.UTF8.GetBytes(name);
-                CloudQueueMessage message = new CloudQueueMessage(bytes);
-                cloudQueue.AddMessage(message);
-            }
-            else
-            {
-                messageLabel.Text = "Not valid extension";
-            }
+            byte[] bytes = Encoding.UTF8.GetBytes(filename);
+            var message = new CloudQueueMessage(bytes);
+            cloudQueue.AddMessage(message);
         }
 
-        protected void refreshButton_Click(object sender, EventArgs e)
+        protected void RefreshButton_Click(object sender, EventArgs e)
         {
             UpdateSoundFiles();
         }
@@ -82,8 +90,8 @@ namespace CloudCoursework1
                 blob.FetchAttributes();
                 return new { Url = o.Uri, Title = blob.Metadata["Title"] };
             });
-            sampleDisplayControl.DataSource = source;
-            sampleDisplayControl.DataBind();
+            soundDisplayControl.DataSource = source;
+            soundDisplayControl.DataBind();
         }
     }
 }
