@@ -20,7 +20,8 @@ namespace CloudCoursework1.WebJob
             using (Stream input = inputBlob.OpenRead())
             using (Stream output = outputBlob.OpenWrite())
             {
-                CreateSample(input, output, 20);
+                const int seconds = 20;
+                CreateSample(input, output, seconds);
 
                 // Copy title from input to output
                 string title = inputBlob.Metadata["Title"];
@@ -30,7 +31,7 @@ namespace CloudCoursework1.WebJob
 
         private static void CreateSample(Stream input, Stream output, int duration)
         {
-            using (var reader = new Mp3FileReader(input, wave => new Mp3FrameDecompressor(wave)))
+            using (Mp3FileReader reader = new Mp3FileReader(input, wave => new Mp3FrameDecompressor(wave)))
             {
                 Mp3Frame frame = reader.ReadNextFrame();
                 int frameTimeLength = (int)(frame.SampleCount / (double)frame.SampleRate * 1000.0);

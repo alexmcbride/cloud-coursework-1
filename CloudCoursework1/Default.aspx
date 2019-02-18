@@ -15,6 +15,7 @@
             <br />
             <br />
             <asp:Button ID="uploadButton" runat="server" Text="Upload" OnClick="uploadButton_Click" />
+            <asp:Label ID="messageLabel" runat="server" Text=""></asp:Label>
         </div>
 
         <div>

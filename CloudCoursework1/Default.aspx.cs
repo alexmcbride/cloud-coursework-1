@@ -3,7 +3,6 @@ using Microsoft.WindowsAzure.Storage;
 using Microsoft.WindowsAzure.Storage.Blob;
 using Microsoft.WindowsAzure.Storage.Queue;
 using System;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -55,6 +54,7 @@ namespace CloudCoursework1
                 CloudBlockBlob blob = blobContainer.GetBlockBlobReference("sounds/" + name);
                 blob.Properties.ContentType = file.ContentType;
                 blob.UploadFromStream(file.InputStream);
+
                 blob.Metadata["Title"] = file.FileName;
                 blob.SetMetadata();
 
@@ -64,7 +64,7 @@ namespace CloudCoursework1
             }
             else
             {
-                Debug.WriteLine("Not valid extension");
+                messageLabel.Text = "Not valid extension";
             }
         }
 
