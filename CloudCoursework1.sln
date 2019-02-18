@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoursework1", "CloudCoursework1\CloudCoursework1.csproj", "{AEF2711C-E093-4103-8F92-9CC75E9D4408}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudCoursework1.WebJob", "CloudCoursework1.WebJob\CloudCoursework1.WebJob.csproj", "{AF5F3D8F-F699-42D9-9D8E-CB90ED387B30}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEF2711C-E093-4103-8F92-9CC75E9D4408}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEF2711C-E093-4103-8F92-9CC75E9D4408}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEF2711C-E093-4103-8F92-9CC75E9D4408}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEF2711C-E093-4103-8F92-9CC75E9D4408}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF5F3D8F-F699-42D9-9D8E-CB90ED387B30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF5F3D8F-F699-42D9-9D8E-CB90ED387B30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF5F3D8F-F699-42D9-9D8E-CB90ED387B30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF5F3D8F-F699-42D9-9D8E-CB90ED387B30}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1A627C10-F639-4DCA-8A03-020B5C867CCD}
+	EndGlobalSection
+EndGlobal
