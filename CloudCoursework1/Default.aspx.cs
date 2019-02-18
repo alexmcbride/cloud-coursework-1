@@ -43,9 +43,9 @@ namespace CloudCoursework1
 
         private void UploadSoundFile()
         {
-            if (soundFileUpload.HasFile)
+            if (SoundFileUpload.HasFile)
             {
-                var file = soundFileUpload.PostedFile;
+                var file = SoundFileUpload.PostedFile;
                 string ext = Path.GetExtension(file.FileName);
                 if (FileExtensions.Any(e => e == ext))
                 {
@@ -53,7 +53,7 @@ namespace CloudCoursework1
                 }
                 else
                 {
-                    messageLabel.Text = "Not valid extension";
+                    MessageLabel.Text = "Not valid extension";
                 }
             }
         }
@@ -90,8 +90,8 @@ namespace CloudCoursework1
                 blob.FetchAttributes();
                 return new { Url = o.Uri, Title = blob.Metadata["Title"] };
             });
-            soundDisplayControl.DataSource = source;
-            soundDisplayControl.DataBind();
+            SoundDisplayControl.DataSource = source;
+            SoundDisplayControl.DataBind();
         }
     }
 }

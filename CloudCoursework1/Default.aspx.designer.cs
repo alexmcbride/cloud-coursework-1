@@ -13,58 +13,58 @@ namespace CloudCoursework1 {
     public partial class Default {
         
         /// <summary>
-        /// uploadForm control.
+        /// UploadForm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm uploadForm;
+        protected global::System.Web.UI.HtmlControls.HtmlForm UploadForm;
         
         /// <summary>
-        /// soundFileUpload control.
+        /// SoundFileUpload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload soundFileUpload;
+        protected global::System.Web.UI.WebControls.FileUpload SoundFileUpload;
         
         /// <summary>
-        /// uploadButton control.
+        /// UploadButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button uploadButton;
+        protected global::System.Web.UI.WebControls.Button UploadButton;
         
         /// <summary>
-        /// messageLabel control.
+        /// MessageLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label messageLabel;
+        protected global::System.Web.UI.WebControls.Label MessageLabel;
         
         /// <summary>
-        /// updatePanel control.
+        /// UpdatePanel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel updatePanel;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel;
         
         /// <summary>
-        /// soundDisplayControl control.
+        /// SoundDisplayControl control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView soundDisplayControl;
+        protected global::System.Web.UI.WebControls.ListView SoundDisplayControl;
         
         /// <summary>
         /// RefreshButton control.
