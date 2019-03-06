@@ -17,6 +17,7 @@
 
         <div>
             <h2>Uploaded</h2>
+            <asp:ScriptManager runat="server" ></asp:ScriptManager>
             <asp:UpdatePanel ID="UpdatePanel" runat="server">
                 <ContentTemplate>
                     <asp:ListView ID="SoundDisplayControl" runat="server" ItemPlaceholderID="SoundsPlaceholder">

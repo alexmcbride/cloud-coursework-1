@@ -32,6 +32,11 @@ namespace CloudCoursework1
             blobContainer = blobClient.GetContainerReference("soundblob");
             blobContainer.CreateIfNotExists();
 
+            blobContainer.SetPermissions(new BlobContainerPermissions()
+            {
+                PublicAccess = BlobContainerPublicAccessType.Blob
+            });
+
             cloudQueue = queueClient.GetQueueReference("soundqueue");
             cloudQueue.CreateIfNotExists();
         }
@@ -88,10 +93,14 @@ namespace CloudCoursework1
             {
                 CloudBlockBlob blob = new CloudBlockBlob(o.Uri);
                 blob.FetchAttributes();
-                return new { Url = o.Uri, Title = blob.Metadata["Title"] };
+                return new {
+                    Url = o.Uri,
+                    Title = Path.GetFileNameWithoutExtension(blob.Metadata["Title"])
+                };
             });
             SoundDisplayControl.DataSource = source;
             SoundDisplayControl.DataBind();
         }
+
     }
 }
